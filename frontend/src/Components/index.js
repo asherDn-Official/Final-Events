@@ -108,8 +108,17 @@ export default function IndexPage() {
                             </p>
                           </div>
                           <p className="paraidnfons">
-                            {event.eventContent}
-                            <a>Read more</a>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: event.eventContent
+                                  .replace(/<img[^>]*>/g, "")
+                                  .replace(/<p[^>]*>/g, "")
+                                  .slice(0, 390),
+                              }}
+                            />
+                            <Link to={`/EventDetail/${event._id}`}>
+                              Read more
+                            </Link>
                           </p>
                           <div className="icon-formeo">
                             <div className="iconpari">
@@ -185,7 +194,10 @@ export default function IndexPage() {
                           <p className="paraidnfons">
                             <div
                               dangerouslySetInnerHTML={{
-                                __html: event.eventContent,
+                                __html: event.eventContent
+                                  .replace(/<img[^>]*>/g, "")
+                                  .replace(/<p[^>]*>/g, "")
+                                  .slice(0, 300),
                               }}
                             />
                             <Link to={`/EventDetail/${event._id}`}>

@@ -3,13 +3,14 @@ const Event = require("../models/eventsModel");
 // Create a new event
 exports.createEvent = async (req, res) => {
   try {
-    const eventData = {
-      ...req.body,
-      eventStartDate: new Date(req.body.eventStartDate),
-      eventEndDate: new Date(req.body.eventEndDate),
-      bookingStartDate: new Date(req.body.bookingStartDate),
-      bookingEndDate: new Date(req.body.bookingEndDate),
-    };
+    // const eventData = {
+    //   ...req.body,
+    //   eventStartDate: new Date(req.body.eventStartDate),
+    //   eventEndDate: new Date(req.body.eventEndDate),
+    //   bookingStartDate: new Date(req.body.bookingStartDate),
+    //   bookingEndDate: new Date(req.body.bookingEndDate),
+    // };
+    const eventData = req.body;
     const newEvent = new Event(eventData);
     const savedEvent = await newEvent.save();
     res.status(201).json(savedEvent);
