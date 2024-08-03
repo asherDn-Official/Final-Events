@@ -117,7 +117,7 @@ export default function IndexPage() {
                               }}
                             />
                             <Link to={`/EventDetail/${event._id}`}>
-                              Read more
+                              Read More
                             </Link>
                           </p>
                           <div className="icon-formeo">
@@ -201,7 +201,7 @@ export default function IndexPage() {
                               }}
                             />
                             <Link to={`/EventDetail/${event._id}`}>
-                              Read more
+                              Read More
                             </Link>
                           </p>
                           <div className="icon-formeo">
